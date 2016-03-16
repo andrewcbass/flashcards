@@ -30,3 +30,20 @@ app.controller('quizCtrl', function($scope, QuoteService) {
 
 
 });
+
+app.controller('editCtrl', function($scope, QuoteService) {
+  console.log('editCtrl loaded');
+
+  QuoteService.getQuotes()
+  .then(function(res) {
+
+    $scope.quotes = res.data;
+
+    console.log(res);
+  }, function(err) {
+    console.error('err', err)
+  })
+
+
+
+});

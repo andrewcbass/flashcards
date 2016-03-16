@@ -2,7 +2,8 @@
 <h4 class='center-align'>Trump or Hitler</h4>
 
 <div class='container'>
-    <div class="quote_card card col" ng-repeat='quote in quotes'>
+  <div class='row'>
+    <div class="quote_card card col s3" ng-repeat='quote in quotes'>
       <div class="card-image waves-effect waves-block waves-light">
         <h4>{{quote.quote}}</h4>
       </div>
@@ -15,4 +16,5 @@
         <h4>-{{quote.person}}</h4>
       </div>
     </div>
+  </div>
 </div>

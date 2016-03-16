@@ -8,9 +8,7 @@ a {
 }
 
 .quote_card {
-  display: inline-block;
-  margin: 20px;
-  width: 400px;
+  margin: 10px;
   padding: 20px;
 }
 .icon {
@@ -23,4 +21,12 @@ a {
 p.quote-reveal {
   font-size: 24px;
   padding: 5px;
+}
+
+table {
+  text-align: left;
+}
+
+.icon-td {
+  float: left;
 }

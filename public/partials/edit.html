@@ -1,0 +1,19 @@
+<table>
+  <thead>
+    <tr>
+      <th>Quote</th>
+      <th>Person</th>
+      <th>Edit</th>
+      <th>Delete</th>
+      </th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr ng-repeat='quote in quotes'>
+      <td>{{quote.quote}}</td>
+      <td>{{quote.person}}</td>
+      <td><i class="icon-td fa fa-pencil-square"></i></td>
+      <td><i class="icon-td icon-close fa fa-times-circle"></i></td>
+    </tr>
+  </tbody>
+</table>
