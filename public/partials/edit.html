@@ -1,19 +1,60 @@
-<table>
-  <thead>
-    <tr>
-      <th>Quote</th>
-      <th>Person</th>
-      <th>Edit</th>
-      <th>Delete</th>
-      </th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr ng-repeat='quote in quotes'>
-      <td>{{quote.quote}}</td>
-      <td>{{quote.person}}</td>
-      <td><i class="icon-td fa fa-pencil-square"></i></td>
-      <td><i class="icon-td icon-close fa fa-times-circle"></i></td>
-    </tr>
-  </tbody>
-</table>
+<div ng-hide='showBox' class='container'>
+  <button ng-click='addNewQuote()' class='btn'>Add New Quote</button>
+  <table>
+    <thead>
+      <tr>
+        <th>Quote</th>
+        <th>Person</th>
+        <th>Edit</th>
+        <th>Delete</th>
+        </th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr ng-repeat='quote in quotes'>
+        <td>{{quote.quote}}</td>
+        <td>{{quote.person}}</td>
+        <!-- edit-->
+        <td><i ng-click='editQuote(quote)' class="icon-td fa fa-pencil-square"></i></td>
+
+        <!-- delete -->
+        <td><i ng-click='deleteQuote(quote)' class="icon-td icon-close fa fa-times-circle"></i></td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<!-- create quote popup -->
+<div ng-show='showBox'>
+<div class='container'>
+  <h1>Edit that Quote</h1>
+  <div class="row">
+      <form name="quoteForm" class="col s12" ng-submit="saveEditQuote(quoteForm.$valid)">
+        <div class="row">
+          <div class="input-field col s6">
+            <input ng-model='edit.quote' type="text" class="validate" name="quote" required>
+            <label class="active">Quote</label>
+          </div>
+        </div>
+        <div class="row">
+          <div class="input-field col s12">
+            <input type="text" class="validate" ng-model="edit.person" name="person" required>
+            <label class="active">Person</label>
+          </div>
+        </div>
+        <div class="row">
+          <div class="input-field col s12">
+            <input disabled value="Quotes" name="category" type="text" class="validate">
+            <label class="active">Category</label>
+          </div>
+        </div>
+        <button class='btn'>Save</button>
+        <button type="button" ng-click='editQuote()' class='btn'>Cancel</button>
+      </form>
+    </div>
+  </div>
+</div>
+
+
+
+<!--  -->

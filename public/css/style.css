@@ -30,3 +30,7 @@ table {
 .icon-td {
   float: left;
 }
+
+td i {
+  cursor: pointer;
+}

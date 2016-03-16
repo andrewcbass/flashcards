@@ -21,5 +21,10 @@ angular.module('flashApp', ['ui.router', 'ngMessages'])
       templateUrl: 'partials/edit.html',
       controller: 'editCtrl'
     })
+    .state('add', {
+      url: '/add',
+      templateUrl: 'partials/add.html',
+      controller: 'addCtrl'
+    })
 
 });

@@ -12,6 +12,7 @@ router.get('/', function(req, res, next) {
 });
 
 router.post('/', function(req, res) {
+  console.log(req.body);
   db.query('insert into quotes set ?', req.body, function(err, result) {
     if(err) return res.status(400).send(err);
 
@@ -26,7 +27,7 @@ router.put('/:id', function(req, res) {
   var category = req.body.category;
 
 
-  db.query('update quotes set quote=?, person=?, category=? where id=?',
+  db.query('UPDATE quotes SET quote=?, person=?, category=? WHERE id=?',
           [quote, person, category, id], function(err, result) {
 
     if(err) return res.status(400).send(err);
