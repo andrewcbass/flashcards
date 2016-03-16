@@ -1,19 +1,20 @@
 <h1 class='center-align'>Who said it?</h1>
 <h4 class='center-align'>Trump or Hitler</h4>
-
-<div class='container'>
+<div <div class='container'>
+  <input ng-model='searchText' class='center-align' placeholder='Search'>
   <div class='row'>
-    <div class="quote_card card col s3" ng-repeat='quote in quotes'>
-      <div class="card-image waves-effect waves-block waves-light">
-        <h4>{{quote.quote}}</h4>
+    <div class="quote_card card col s12 m6 l4" ng-repeat='quote in quotes | filter : searchText'>
+      <div class="quiz-img card-image waves-effect waves-block waves-light">
+        <h5 class='quote'>{{quote.quote}}</h5>
+
       </div>
       <div class="card-content">
         <span class="card-title activator grey-text text-darken-4">Who said it?<i class=" icon fa fa-ellipsis-v"></i></span>
       </div>
-      <div class="card-reveal">
-        <span class="card-title grey-text text-darken-4"><i class="icon icon-close fa fa-times-circle"></i></span>
-        <p class='quote-reveal'>{{quote.quote}}</p>
-        <h4>-{{quote.person}}</h4>
+      <div class="card-reveal {{quote.person}}">
+        <span class="card-title grey-text text-darken-4">
+          <i class="icon icon-close fa fa-times-circle"></i>
+        </span>
       </div>
     </div>
   </div>

@@ -25,6 +25,4 @@ angular.module('flashApp')
     newQuote: newQuote,
     editQuote: editQuote
   }
-
-
 })

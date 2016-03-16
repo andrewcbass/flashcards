@@ -1,23 +1,24 @@
 <div ng-hide='showBox' class='container'>
   <button ng-click='addNewQuote()' class='btn'>Add New Quote</button>
-  <table>
+
+  <input ng-model='searchText' class='center-align' placeholder='Search'>
+  <table class='striped'>
     <thead>
       <tr>
         <th>Quote</th>
         <th>Person</th>
+        <th>Category</th>
         <th>Edit</th>
         <th>Delete</th>
         </th>
       </tr>
     </thead>
     <tbody>
-      <tr ng-repeat='quote in quotes'>
+      <tr ng-repeat='quote in quotes | filter : searchText'>
         <td>{{quote.quote}}</td>
         <td>{{quote.person}}</td>
-        <!-- edit-->
+        <td>{{quote.category}}</td>
         <td><i ng-click='editQuote(quote)' class="icon-td fa fa-pencil-square"></i></td>
-
-        <!-- delete -->
         <td><i ng-click='deleteQuote(quote)' class="icon-td icon-close fa fa-times-circle"></i></td>
       </tr>
     </tbody>
@@ -26,9 +27,9 @@
 
 <!-- create quote popup -->
 <div ng-show='showBox'>
-<div class='container'>
-  <h1>Edit that Quote</h1>
-  <div class="row">
+  <div class='container'>
+    <h1>Edit that Quote</h1>
+    <div class="row">
       <form name="quoteForm" class="col s12" ng-submit="saveEditQuote(quoteForm.$valid)">
         <div class="row">
           <div class="input-field col s6">
@@ -44,7 +45,7 @@
         </div>
         <div class="row">
           <div class="input-field col s12">
-            <input disabled value="Quotes" name="category" type="text" class="validate">
+            <input required ng-model="edit.category" name="category" type="text" class="validate">
             <label class="active">Category</label>
           </div>
         </div>
@@ -54,7 +55,3 @@
     </div>
   </div>
 </div>
-
-
-
-<!--  -->

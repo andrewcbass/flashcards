@@ -8,8 +8,7 @@ a {
 }
 
 .quote_card {
-  margin: 10px;
-  padding: 20px;
+  margin-bottom: 30px
 }
 .icon {
   padding: 20px;
@@ -26,11 +25,30 @@ p.quote-reveal {
 table {
   text-align: left;
 }
-
 .icon-td {
   float: left;
 }
-
 td i {
   cursor: pointer;
 }
+.quote {
+}
+.quiz-img {
+  height: 200px;
+  background-size: 100% 200px;
+}
+
+.Trump {
+  background-image: url('http://i.imgur.com/IPjxZ4y.jpg?1');
+  background-size: 100%;
+  background-repeat: no-repeat;
+}
+.Hitler {
+  background-image: url('http://i.imgur.com/vktEqdy.jpg?1');
+  background-size: 100%;
+  background-repeat: no-repeat;
+}
+
+
+
+/**/
