@@ -20,7 +20,7 @@
       </tr>
     </thead>
     <tbody>
-      <tr ng-repeat='quote in quotes | filter : searchText'>
+      <tr ng-repeat='quote in quotes | orderBy: "category" | filter : searchText'>
         <td>{{quote.quote}}</td>
         <td>{{quote.person}}</td>
         <td>{{quote.category}}</td>
@@ -38,7 +38,7 @@
     <div class="row">
       <form name="quoteForm" class="col s12" ng-submit="saveEditQuote(quoteForm.$valid)">
         <div class="row">
-          <div class="input-field col s6">
+          <div class="input-field col s12">
             <input ng-model='edit.quote' type="text" class="validate" name="quote" required>
             <label class="active">Quote</label>
           </div>
