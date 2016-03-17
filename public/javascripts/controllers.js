@@ -15,13 +15,11 @@ app.controller('homeCtrl', function($scope, $state) {
 //quiz controller
 app.controller('quizCtrl', function($scope, QuoteService) {
 
-
   QuoteService.getQuotes()
     .then(function(res) {
       $scope.quotes = res.data;
-      console.log(res);
     }, function(err) {
-      console.error('err', err)
+      console.log('err', err)
     });
 
     $scope.viewAll = false;
@@ -37,7 +35,8 @@ app.controller('quizCtrl', function($scope, QuoteService) {
       if($scope.index === 0) {
         return;
       }
-      angular.element('.card-reveal').css("display", "none").css("transform", "translateY(0px)");
+      angular.element('.card-reveal')
+      .css("display", "none").css("transform", "translateY(0px)");
       $scope.index--;
     }
 
@@ -45,13 +44,11 @@ app.controller('quizCtrl', function($scope, QuoteService) {
       if($scope.index === $scope.quotes.length - 1) {
         return;
       }
-      angular.element('.card-reveal').css("display", "none").css("transform", "translateY(0px)");
+      angular.element('.card-reveal')
+      .css("display", "none").css("transform", "translateY(0px)");
       $scope.index++;
     }
-
 });
-
-
 
 //edit controller
 app.controller('editCtrl', function($scope, $state, QuoteService) {
@@ -59,7 +56,6 @@ app.controller('editCtrl', function($scope, $state, QuoteService) {
   QuoteService.getQuotes()
     .then(function(res) {
       $scope.quotes = res.data;
-      console.log(res);
     }, function(err) {
       console.log('err', err)
     })
@@ -69,7 +65,6 @@ app.controller('editCtrl', function($scope, $state, QuoteService) {
     var id = quote.id;
     QuoteService.deleteQuote(id)
       .then(function(res) {
-        console.log('RES', res);
         var index = $scope.quotes.indexOf(quote)
         $scope.quotes.splice(index, 1);
       }, function(err) {
@@ -80,7 +75,6 @@ app.controller('editCtrl', function($scope, $state, QuoteService) {
   //make edit fields show and populate with existing data
   $scope.showBox = false;
   $scope.editQuote = function(quote) {
-    console.log('QUOTE', quote);
     if ($scope.showBox === true) {
       return $scope.showBox = false;
     }
@@ -116,7 +110,6 @@ app.controller('editCtrl', function($scope, $state, QuoteService) {
   }
 });
 
-
 //add quote controller
 app.controller('addCtrl', function($scope, $state, QuoteService) {
   $scope.saveNewQuote = function(valid) {
@@ -127,7 +120,6 @@ app.controller('addCtrl', function($scope, $state, QuoteService) {
       .then(function(res) {
         $scope.newQuote = {};
         $state.go('edit');
-        console.log('res: ', res);
       }, function(err) {
         console.log('err', err);
       })

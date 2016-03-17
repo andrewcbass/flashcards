@@ -1,3 +1,5 @@
+'use strict';
+
 var express = require('express');
 var router = express.Router();
 
@@ -12,7 +14,6 @@ router.get('/', function(req, res, next) {
 });
 
 router.post('/', function(req, res) {
-  console.log(req.body);
   db.query('insert into quotes set ?', req.body, function(err, result) {
     if(err) return res.status(400).send(err);
 
@@ -26,7 +27,6 @@ router.put('/:id', function(req, res) {
   var person = req.body.person;
   var category = req.body.category;
 
-
   db.query('UPDATE quotes SET quote=?, person=?, category=? WHERE id=?',
           [quote, person, category, id], function(err, result) {
 
@@ -38,7 +38,7 @@ router.put('/:id', function(req, res) {
 
 router.delete('/:id', function(req, res) {
   var id = req.params.id;
-  console.log('ID', id);
+
   db.query('delete from quotes where id=?', id, function(err, result) {
     if(err) return res.status(400).send(err);
 
@@ -47,10 +47,3 @@ router.delete('/:id', function(req, res) {
 });
 
 module.exports = router;
-
-//
-//
-//
-//
-//
-//

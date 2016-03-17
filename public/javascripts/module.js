@@ -26,5 +26,4 @@ angular.module('flashApp', ['ui.router'])
       templateUrl: 'partials/add.html',
       controller: 'addCtrl'
     })
-
 });

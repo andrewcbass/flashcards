@@ -1,10 +1,11 @@
 <div class="container center-align" id="header">
-  <h1>Who said it?</h1>
-  <h4>Trump or Hitler</h4>
+  <h1>Did Trump say that?</h1>
+  <h4>... or someone else?</h4>
   <button class="btn" ng-click="cardView()">All or One</button>
   <input ng-model='searchText' class='center-align' placeholder='Search Quotes'>
 </div>
 
+<!-- View all cards at one time -->
 <div class='container' ng-hide="viewAll">
   <div class='row'>
     <div class="quote_card card col s12 m6 l4" ng-repeat='quote in quotes | filter : searchText'>
@@ -24,7 +25,7 @@
   </div>
 </div>
 
-
+<!-- View only one card at a time -->
 <div ng-show="viewAll">
   <div class="container center-align">
     <div class='row'>
@@ -50,7 +51,6 @@
         <button ng-click="next()" class="btn pageButton light-blue darken-4"><i class="fa fa-long-arrow-right"></i></button>
       </div>
     </div>
-
   </div>
 </div>
 
