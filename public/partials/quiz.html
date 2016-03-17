@@ -2,11 +2,11 @@
   <h1>Did Trump say that?</h1>
   <h4>... or someone else?</h4>
   <button class="btn" ng-click="cardView()">All or One</button>
-  <input ng-model='searchText' class='center-align' placeholder='Search Quotes'>
 </div>
 
 <!-- View all cards at one time -->
 <div class='container' ng-hide="viewAll">
+  <input ng-model='searchText' class='center-align' placeholder='Search Quotes'>
   <div class='row'>
     <div class="quote_card card col s12 m6 l4" ng-repeat='quote in quotes | filter : searchText'>
       <div class="quiz-img card-image waves-effect waves-block waves-light">
