@@ -14,13 +14,41 @@ app.controller('homeCtrl', function($scope, $state) {
 
 //quiz controller
 app.controller('quizCtrl', function($scope, QuoteService) {
+
+
   QuoteService.getQuotes()
     .then(function(res) {
       $scope.quotes = res.data;
       console.log(res);
     }, function(err) {
       console.error('err', err)
-    })
+    });
+
+    $scope.viewAll = false;
+    $scope.cardView = function() {
+      if(!$scope.viewAll){
+        return $scope.viewAll = true;
+      }
+      return $scope.viewAll = false;
+    }
+
+    $scope.index = 0;
+    $scope.prev = function() {
+      if($scope.index === 0) {
+        return;
+      }
+      angular.element('.card-reveal').css("display", "none").css("transform", "translateY(0px)");
+      $scope.index--;
+    }
+
+    $scope.next = function() {
+      if($scope.index === $scope.quotes.length - 1) {
+        return;
+      }
+      angular.element('.card-reveal').css("display", "none").css("transform", "translateY(0px)");
+      $scope.index++;
+    }
+
 });
 
 

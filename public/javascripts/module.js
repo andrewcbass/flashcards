@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('flashApp', ['ui.router', 'ngMessages'])
+angular.module('flashApp', ['ui.router'])
 .config(function($stateProvider, $urlRouterProvider) {
 
   $urlRouterProvider.otherwise('/');

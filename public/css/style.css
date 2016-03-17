@@ -16,6 +16,8 @@ a {
 }
 .icon-close{
   color: red;
+  margin-top: 200px;
+  margin-right: 20px;
 }
 p.quote-reveal {
   font-size: 24px;
@@ -36,6 +38,15 @@ td i {
 .quiz-img {
   height: 200px;
   background-size: 100% 200px;
+}
+
+#header {
+  margin-bottom: 20px;
+}
+
+.pageButton {
+
+
 }
 
 .Trump {
