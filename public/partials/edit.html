@@ -1,7 +1,13 @@
-<div ng-hide='showBox' class='container'>
-  <button ng-click='addNewQuote()' class='btn'>Add New Quote</button>
 
-  <input ng-model='searchText' class='center-align' placeholder='Search'>
+<div>
+  <h3 class="center-align">Edit Quotes</h3>
+</div>
+<div ng-hide='showBox' class='container'>
+  <div class="center-align">
+    <button ng-click='addNewQuote()' class='btn'>Add New Quote</button>
+  </div>
+<br>
+  <input ng-model='searchText' class='center-align' placeholder='Search Quotes'>
   <table class='striped'>
     <thead>
       <tr>
@@ -19,7 +25,7 @@
         <td>{{quote.person}}</td>
         <td>{{quote.category}}</td>
         <td><i ng-click='editQuote(quote)' class="icon-td fa fa-pencil-square"></i></td>
-        <td><i ng-click='deleteQuote(quote)' class="icon-td icon-close fa fa-times-circle"></i></td>
+        <td><i ng-click='deleteQuote(quote)' class="icon-td close fa fa-times-circle"></i></td>
       </tr>
     </tbody>
   </table>
